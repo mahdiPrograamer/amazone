@@ -27,9 +27,6 @@ const productsData = {
       rating: 4.5,
       numReviews: 10,
       description: "high quality shirt",
-      reviews: [
-        { name: "mahdi", comment: "hello it is first comment", rating: 5 },
-      ],
     },
     {
       name: "Adidas Fit Shirt",
@@ -42,9 +39,6 @@ const productsData = {
       rating: 4.0,
       numReviews: 10,
       description: "high quality product",
-      reviews: [
-        { name: "mahdi", comment: "hello it is first comment", rating: 5 },
-      ],
     },
     {
       name: "Nike Slim Pant",
@@ -57,9 +51,6 @@ const productsData = {
       rating: 4.5,
       numReviews: 14,
       description: "high quality product",
-      reviews: [
-        { name: "mahdi", comment: "hello it is first comment", rating: 5 },
-      ],
     },
     {
       name: "Adidas Fit Pant",
@@ -72,9 +63,6 @@ const productsData = {
       rating: 4.5,
       numReviews: 10,
       description: "high quality product",
-      reviews: [
-        { name: "mahdi", comment: "hello it is first comment", rating: 5 },
-      ],
     },
   ],
 };
