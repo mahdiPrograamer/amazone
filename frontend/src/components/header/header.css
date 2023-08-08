@@ -1,0 +1,9 @@
+.header {
+  padding: 1rem;
+  background: var(--darken-blue);
+}
+
+.headre a {
+  color: #ffffff !important;
+  font-size: large;
+}
