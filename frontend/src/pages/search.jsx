@@ -89,7 +89,7 @@ export const Search = (props) => {
     const filterRating = filter.rating || rating;
     const filterPrice = filter.price || price;
     const sortOrder = filter.order || order;
-    return `?category=${filterCategory}&query=${filterQuery}&price=${filterPrice}&rating=${filterRating}&order=${sortOrder}&page=${filterPage}`;
+    return `/search?category=${filterCategory}&query=${filterQuery}&price=${filterPrice}&rating=${filterRating}&order=${sortOrder}&page=${filterPage}`;
   };
 
   return (
@@ -105,10 +105,7 @@ export const Search = (props) => {
               <li>
                 <Link
                   className={"all" === category ? "text-bold" : ""}
-                  to={{
-                    pathname: "/search",
-                    search: getFilterUrl({ category: "all" }),
-                  }}
+                  to={getFilterUrl({ category: "all" })}
                 >
                   Any
                 </Link>
@@ -117,10 +114,7 @@ export const Search = (props) => {
                 <li key={c}>
                   <Link
                     className={c === category ? "text-bold" : ""}
-                    to={{
-                      pathname: "/search",
-                      search: getFilterUrl({ category: c }),
-                    }}
+                    to={getFilterUrl({ category: c })}
                   >
                     {c}
                   </Link>
@@ -134,10 +128,7 @@ export const Search = (props) => {
               <li>
                 <Link
                   className={"all" === price ? "text-bold" : ""}
-                  to={{
-                    pathname: "/search",
-                    search: getFilterUrl({ price: "all" }),
-                  }}
+                  to={getFilterUrl({ price: "all" })}
                 >
                   Any
                 </Link>
@@ -145,10 +136,7 @@ export const Search = (props) => {
               {prices.map((p) => (
                 <li key={p.value}>
                   <Link
-                    to={{
-                      pathname: "/search",
-                      search: getFilterUrl({ price: p.value }),
-                    }}
+                    to={getFilterUrl({ price: p.value })}
                     className={p.value === price ? "text-bold" : ""}
                   >
                     {p.name}
@@ -163,10 +151,7 @@ export const Search = (props) => {
               {ratings.map((r) => (
                 <li key={r.name}>
                   <Link
-                    to={{
-                      pathname: "/search",
-                      search: getFilterUrl({ rating: r.rating }),
-                    }}
+                    to={getFilterUrl({ rating: r.rating })}
                     className={`${r.rating}` === `${rating}` ? "text-bold" : ""}
                   >
                     <Rating caption={" & up"} rating={r.rating}></Rating>
@@ -175,10 +160,7 @@ export const Search = (props) => {
               ))}
               <li>
                 <Link
-                  to={{
-                    pathname: "/search",
-                    search: getFilterUrl({ rating: "all" }),
-                  }}
+                  to={getFilterUrl({ rating: "all" })}
                   className={rating === "all" ? "text-bold" : ""}
                 >
                   <Rating caption={" & up"} rating={0}></Rating>
@@ -221,10 +203,7 @@ export const Search = (props) => {
                   <select
                     value={order}
                     onChange={(e) => {
-                      navigate({
-                        pathname: "/search",
-                        search: getFilterUrl({ order: e.target.value }),
-                      });
+                      navigate(getFilterUrl({ order: e.target.value }));
                     }}
                   >
                     <option value="newest">Newest Arrivals</option>
@@ -252,10 +231,7 @@ export const Search = (props) => {
                   <LinkContainer
                     key={x + 1}
                     className="mx-1"
-                    to={{
-                      pathname: "/search",
-                      search: getFilterUrl({ page: x + 1 }),
-                    }}
+                    to={getFilterUrl({ page: x + 1 })}
                   >
                     <Button
                       className={
