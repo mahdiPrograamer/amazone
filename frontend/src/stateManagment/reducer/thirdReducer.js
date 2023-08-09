@@ -42,6 +42,10 @@ export const searchHandler = async (
 ) => {
   dispatch(searchSlice.actions.fetchSearchStart());
   try {
+    // const { data } = await axios.get({
+    //   pathname: "/api/products/search",
+    //   search: `?page=${page}&query=${query}&category=${category}&price=${price}&rating=${rating}&order=${order}`,
+    // });
     const { data } = await axios.get(
       `/api/products/search?page=${page}&query=${query}&category=${category}&price=${price}&rating=${rating}&order=${order}`
     );
